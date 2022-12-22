@@ -23,7 +23,8 @@ body{
     
 
 }
-
+@import "./pages/forms/LoginForm";
+@import "./pages/forms/RegisterForm";
 @import "./components/cart/CartPageItem";
 @import "./components/cart/AddCartButton";
 @import "./components/cart/CartLink";
