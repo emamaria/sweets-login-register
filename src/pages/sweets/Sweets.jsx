@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { sweetData } from '../../data/sweets'
-import Sweet from './sweet'
+import Sweet from '../../components/sweets/sweet'
 
 const Sweets = () => {
 

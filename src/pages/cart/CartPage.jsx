@@ -1,6 +1,6 @@
 import React from 'react'
 import {useSelector} from 'react-redux'
-import CartPageItem from './CartPageItem'
+import CartPageItem from '../../components/cart/CartPageItem'
 
 const CartPage = () => {
    const cartState = useSelector(state => state.cartTasks)

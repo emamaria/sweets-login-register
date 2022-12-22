@@ -1,6 +1,6 @@
 import React from 'react'
 import { drinkData } from '../../data/drinks'
-import Drink from './Drink'
+import Drink from '../../components/drinks/Drink'
 
 const Drinks = () => {
  
