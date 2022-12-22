@@ -14,8 +14,9 @@ const Header = () => {
 
     <header className='header'>
         <h1>Sweets and Drinks</h1>
-        <UserLink/>
+        {(path!== "/login" && path!== "/register") && <UserLink/>} 
         {(path!== "/" && path!== "/cart")&&<CartLink/>}
+        
         
     </header>
 
