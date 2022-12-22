@@ -1,4 +1,4 @@
-.loginForm{
+.form{
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -7,21 +7,21 @@
     margin-bottom: 100px;
 }
 
-.loginForm_container{
+.form_container{
     display: flex;
     justify-content: center;
     margin-top: 100px;
     
 }
 
-.login_input{
+.form_input{
     width: 300px;
     height: 30px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-.login_button{
+.form_button{
     margin-top: 20px;
     margin-bottom: 30px;
     width: 300px;
@@ -30,7 +30,7 @@
     border: none;
 }
 
-.login_title{
+.form_title{
     margin-top: 30px;
     margin-bottom: 10px;
     color:#10A19D;
