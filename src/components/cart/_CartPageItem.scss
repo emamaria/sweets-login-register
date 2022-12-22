@@ -1,0 +1,100 @@
+
+.cartItem_container{
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+   
+    flex-wrap: wrap;
+    
+}
+
+.deleteButton{
+    width: 65px;
+    height: 35px;
+    background-color: $color1;
+    border: none;
+    font-size: 20px;
+    border-radius: 3px;
+}
+
+
+.buttons_container{
+    display: flex;
+     align-items: baseline;
+    
+}
+
+.counter_container{
+    margin-top: 20px;
+    display: flex;
+    font-size: 25px;
+    margin-right: 150px;
+    p{
+        width: 25px;
+        text-align: center;
+        background-color: $color1;
+    }
+    button{
+        width: 25px
+    }
+}
+
+.cartDetail_container{
+    display: flex;
+    flex-direction: column;
+    align-self:flex-end;
+    margin-bottom: 15px;
+}
+
+.img_container{
+    margin-right: 50px;
+    width: 400px
+}
+
+.totalPurchase{
+    text-align: right;
+    padding: 30px;
+}
+
+.totalItems{
+    text-align: right;
+    padding-right: 40px;
+    padding-top: 20px;
+}
+
+@media (max-width:600px) {
+ 
+    .img_container{
+        margin-right: 0px;
+    }
+
+    .cartDetail_container{
+
+        h1{
+            font-size: 20px;
+        }
+       
+    }
+
+
+    .totalPurchase{
+        font-size:20px;
+    }
+    
+    .totalItems{
+        font-size:20px ;
+    }
+    
+    .counter_container{
+
+        button{
+            width: 20px
+        }
+
+        p{
+            font-size: 20px;
+        }
+        
+    }
+    
+  }

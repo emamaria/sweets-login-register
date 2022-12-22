@@ -1,0 +1,38 @@
+// $color1: #6FEDD6;
+// $color1:#d1cebd;
+// $color1:#975a5e;
+// $color1:#085f63;
+// $color1: #00FFD1;
+// $color1:#FF8DC7;
+$color1:#65C18C;
+// $color1: #FF8FB1;
+$font1: 'Petit Formal Script', cursive;
+
+//make not move the screen when mobile format
+html, body {width: auto!important; overflow-x: hidden!important} 
+
+body{
+    background: $color1;
+    
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+
+}
+
+@import "./components/cart/CartPageItem";
+@import "./components/cart/AddCartButton";
+@import "./components/cart/CartLink";
+@import "./components/cart/CartPage";
+@import "./components/drinks/Drinks";
+@import "./components/home/Home";
+@import "./components/sweets/Sweets";
+@import "./components/Navbar/Navbar";
+@import "./components/Header/Header";
+@import "./components/sweets/sweet";
+@import "./components/drinks/Drink"
+

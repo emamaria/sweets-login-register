@@ -1,0 +1,35 @@
+.cartPage_container{
+    margin: 100px;
+    background-color: white;
+   
+    
+
+}
+
+.cartPage_container_title{
+    padding-left: 30px;
+    padding-top: 40px;
+    padding-bottom: 30px;
+//    background-color: lightgray;
+  font-family: italic;
+   font-size: 35px;
+   color: $color1;
+
+}
+
+@media (max-width:600px) {
+ 
+    .cartPage_container{
+        margin: 30px;
+        background-color: white;
+       
+        align-items: center;
+       
+    
+    }
+
+    .cartPage_container_title{
+        font-size: 25px;
+    }
+
+  }
