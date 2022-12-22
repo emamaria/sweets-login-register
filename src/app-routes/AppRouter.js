@@ -8,6 +8,7 @@ import Navbar from '../components/Navbar/Navbar'
 
 
 import Sweets from '../pages/sweets/Sweets'
+import LoginForm from '../pages/forms/LoginForm'
 
 const AppRouter = () => {
   
@@ -22,6 +23,7 @@ const AppRouter = () => {
         <Route path="/sweets" element={<Sweets/>}/>
         <Route path="/drinks" element={<Drinks/>}/>
         <Route path="/cart" element={<CartPage/>}/>
+        <Route path="/login" element={<LoginForm/>}/>
         </Routes>
     </Router>
     
