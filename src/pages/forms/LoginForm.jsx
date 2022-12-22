@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { NavLink } from 'react-router-dom';
 const LoginForm = () => {
   return (
     <div className='form_container'>
@@ -8,7 +8,7 @@ const LoginForm = () => {
      <input className='form_input' type="text" placeholder="email" name="email" required/> 
      <input className='form_input' type="text" placeholder="password" name="password" required/>
      <button className='form_button' type="submit"><p>Login</p></button>
-     <p className="registerLink">Create Account</p>
+     <NavLink className="form_navlink" to="/register"><p className="registerLink">Create Account</p>  </NavLink>
     </form>
     </div>
     

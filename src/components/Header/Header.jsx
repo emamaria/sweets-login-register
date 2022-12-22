@@ -1,6 +1,7 @@
 import React from 'react'
 import CartLink from '../cart/CartLink'
 import {useLocation} from 'react-router-dom'
+import UserLink from '../user/UserLink'
 
 
 
@@ -13,6 +14,7 @@ const Header = () => {
 
     <header className='header'>
         <h1>Sweets and Drinks</h1>
+        <UserLink/>
         {(path!== "/" && path!== "/cart")&&<CartLink/>}
         
     </header>
