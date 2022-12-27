@@ -1,8 +1,15 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom';
+import { userAuthAsync } from '../../thunks/userAuth';
 
 const RegisterForm = () => {
 
+
+  const {userRegister} = userAuthAsync()
+
+  console.log(userRegister)
+
+  
   
   const [form, setForm] = useState({name: "", email: "", password: ""});
 
@@ -14,9 +21,12 @@ const RegisterForm = () => {
    console.log(form)
   }
 
+
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log(form)
+
+    userRegister(name, email, password)
   }
 
   return (
