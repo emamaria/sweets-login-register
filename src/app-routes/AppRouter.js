@@ -10,10 +10,10 @@ import Navbar from '../components/Navbar/Navbar'
 import Sweets from '../pages/sweets/Sweets'
 import LoginForm from '../pages/forms/LoginForm'
 import RegisterForm from '../pages/forms/RegisterForm'
-import { userAuthAsync } from '../thunks/userAuth'
+import { UserAuthAsync } from '../thunks/userAuth'
 
 const AppRouter = () => {
- const {checkUserToken} = userAuthAsync()
+ const {checkUserToken} = UserAuthAsync()
  
   // al recargar cualquier pagina de mi app me valida y renueva el token
  useEffect(() => {

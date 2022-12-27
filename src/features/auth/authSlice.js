@@ -8,10 +8,10 @@ export const authSlice = createSlice({
     },
     reducers: {
        checkState: (state) => state,
-       userLogin: (state, action) => {
-          console.log(action)
+       login: (state, action) => {
+          console.log(action.payload)
        },
-       userLogout: (state, action) => {
+       logout: (state, action) => {
         console.log(action)
        },
       
@@ -20,7 +20,7 @@ export const authSlice = createSlice({
 
 
 
-export const  {checkState, userLogin, userLogout} =  authSlice.actions
+export const  {checkState, login, logout} =  authSlice.actions
 
 
 export default authSlice.reducer

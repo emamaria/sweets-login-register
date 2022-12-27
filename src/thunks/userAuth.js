@@ -1,9 +1,11 @@
 
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import {login} from '../features/auth/authSlice'
 
-export const userAuthAsync = () => {
+export const UserAuthAsync = () => {
 
- 
+    const dispatch = useDispatch()
 
   let baseUrl = process.env.REACT_APP_API
   
@@ -15,7 +17,7 @@ export const userAuthAsync = () => {
         console.log(data)
         localStorage.setItem('token', data.token);
         localStorage.setItem('token-init-date', new Date().getTime());
-           
+        dispatch(login({...data}))
         
         } catch (error) {
               console.log(error.response.data)
@@ -30,7 +32,7 @@ export const userAuthAsync = () => {
         console.log(data)
         localStorage.setItem('token', data.token);
         localStorage.setItem('token-init-date', new Date().getTime());
-           
+        dispatch(login({...data}))
         
         } catch (error) {
               console.log(error.response.data)

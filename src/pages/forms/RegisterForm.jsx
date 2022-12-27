@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom';
-import { userAuthAsync } from '../../thunks/userAuth';
+import { UserAuthAsync } from '../../thunks/userAuth';
 
 const RegisterForm = () => {
 
 
-  const {userRegister} = userAuthAsync()
+  const {userRegister} = UserAuthAsync()
 
   console.log(userRegister)
 

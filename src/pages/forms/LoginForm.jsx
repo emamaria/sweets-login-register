@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom';
-import { userAuthAsync } from '../../thunks/userAuth';
+import { UserAuthAsync } from '../../thunks/userAuth';
 const LoginForm = () => {
 
-  const {userLogin} = userAuthAsync()
+  const {userLogin} = UserAuthAsync()
 
    
   const [form, setForm] = useState({name: "", email: "", password: ""});
