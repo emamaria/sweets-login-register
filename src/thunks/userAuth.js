@@ -24,10 +24,26 @@ export const userAuthAsync = () => {
         }
     }
 
+    const userLogin = async(email, password )  => {
+     
+      try {
+
+        const {data} = await axios.post(`${baseUrl}/auth/login`, {email, password})
+        console.log(data)
+        localStorage.setItem('token', data.token);
+        localStorage.setItem('token-init-date', new Date().getTime());
+           
+        
+        } catch (error) {
+              console.log(error.response.data)
+        }
+    }
+
 
     
 return {
-  userRegister
+  userRegister,
+  userLogin
 }
     
 
