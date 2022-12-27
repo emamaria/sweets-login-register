@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { BrowserRouter as Router, Route,  Routes } from 'react-router-dom'
 import CartPage from '../pages/cart/CartPage'
 import Drinks from '../pages/drinks/Drinks'
@@ -10,10 +10,16 @@ import Navbar from '../components/Navbar/Navbar'
 import Sweets from '../pages/sweets/Sweets'
 import LoginForm from '../pages/forms/LoginForm'
 import RegisterForm from '../pages/forms/RegisterForm'
+import { userAuthAsync } from '../thunks/userAuth'
 
 const AppRouter = () => {
-  
-  
+ const {checkUserToken} = userAuthAsync()
+ 
+  // al recargar cualquier pagina de mi app me valida y renueva el token
+ useEffect(() => {
+  checkUserToken()
+
+}, [checkUserToken]);
   return (
     
      <Router>

@@ -5,11 +5,11 @@ import { userAuthAsync } from '../../thunks/userAuth';
 const RegisterForm = () => {
 
 
-  const {userRegister, checkUserToken} = userAuthAsync()
+  const {userRegister} = userAuthAsync()
 
   console.log(userRegister)
 
-  checkUserToken()
+  
   
   const [form, setForm] = useState({name: "", email: "", password: ""});
 
