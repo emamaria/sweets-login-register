@@ -5,22 +5,26 @@ import Drinks from '../pages/drinks/Drinks'
 import Header from '../components/Header/Header'
 import Home from '../pages/home/Home'
 import Navbar from '../components/Navbar/Navbar'
-
-
 import Sweets from '../pages/sweets/Sweets'
 import LoginForm from '../pages/forms/LoginForm'
 import RegisterForm from '../pages/forms/RegisterForm'
 import { UserAuthAsync } from '../thunks/userAuth'
+import { useSelector } from 'react-redux'
 
 const AppRouter = () => {
  const {checkUserToken} = UserAuthAsync()
+
+ const {status} = useSelector(state => state.authUser)
+
+ console.log("status", status)
  
   //se ha colocado aquí para que  al recargar cualquier pagina de mi app se ejecute para validar y renovar el token
-  //para mantener o no la sesion del usuario según si está logeado(autenticado) o no
+  //para mantener o no la sesion del usuario según si está logeado(autenticado) o no. se coloca array porque solo quiero que se
+  //ejecute al cargarse la pagina
  useEffect(() => {
   checkUserToken()
 
-}, [checkUserToken]);
+}, []);
   return (
     
      <Router>
