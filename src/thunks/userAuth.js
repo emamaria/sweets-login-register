@@ -1,8 +1,9 @@
 
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
-import {login} from '../features/auth/authSlice'
-
+import {login, logout} from '../features/auth/authSlice'
+//Es una funcion  que me retorna las funciones asíncronas de login, registro como renovar token para
+//poderlo usar donde quiera a lo largo de la aplicacion
 export const UserAuthAsync = () => {
 
     const dispatch = useDispatch()
@@ -21,6 +22,7 @@ export const UserAuthAsync = () => {
         
         } catch (error) {
               console.log(error.response.data)
+              dispatch(logout())
         }
     }
 
@@ -36,6 +38,7 @@ export const UserAuthAsync = () => {
         
         } catch (error) {
               console.log(error.response.data)
+              dispatch(logout())
         }
     }
 
@@ -52,10 +55,12 @@ export const UserAuthAsync = () => {
         console.log(data)
         localStorage.setItem('token', data.token);
         localStorage.setItem('token-init-date', new Date().getTime());
-           
+        dispatch(login({...data}))
         
         } catch (error) {
               console.log(error.response.data)
+              localStorage.clear()
+              dispatch(logout())
         }
     }
 

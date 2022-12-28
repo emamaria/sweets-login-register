@@ -15,7 +15,8 @@ import { UserAuthAsync } from '../thunks/userAuth'
 const AppRouter = () => {
  const {checkUserToken} = UserAuthAsync()
  
-  // al recargar cualquier pagina de mi app me valida y renueva el token
+  //se ha colocado aquí para que  al recargar cualquier pagina de mi app se ejecute para validar y renovar el token
+  //para mantener o no la sesion del usuario según si está logeado(autenticado) o no
  useEffect(() => {
   checkUserToken()
 
