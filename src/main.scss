@@ -23,6 +23,7 @@ body{
     
 
 }
+@import "./components/user/LoggedUserLink";
 @import "./pages/user/User";
 @import "./pages/forms/LoginForm";
 @import "./pages/forms/RegisterForm";
