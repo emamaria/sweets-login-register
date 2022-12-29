@@ -6,7 +6,7 @@ import { UserAuthAsync } from '../../thunks/userAuth';
 const LoginForm = () => {
 
   const {userLogin} = UserAuthAsync()
-  const {status} = useSelector(state => state.authUser)
+  const {status, user} = useSelector(state => state.authUser)
    
   const [form, setForm] = useState({name: "", email: "", password: ""});
 
@@ -34,7 +34,7 @@ const LoginForm = () => {
   <button className='form_button' type="submit"><p>Login</p></button>
   <NavLink className="form_navlink" to="/register"><p className="registerLink">Create Account</p>  </NavLink>
  </form>
- </div>): <Navigate to="/ema"/>
+ </div>): <Navigate to={`/${user.name}`}/>
   )
 }
 

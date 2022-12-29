@@ -8,7 +8,7 @@ const RegisterForm = () => {
 
   const {userRegister} = UserAuthAsync()
 
-  const {status} = useSelector(state => state.authUser)
+  const {status, user} = useSelector(state => state.authUser)
 
   console.log(userRegister)
 
@@ -42,7 +42,7 @@ const RegisterForm = () => {
    <button className='form_button' type="submit"><p>Register</p></button>
    <NavLink className="form_navlink" to="/login"><p className="registerLink">Back to login</p></NavLink>
   </form>
-  </div>):<Navigate to="/ema"/>
+  </div>):<Navigate to={`/${user.name}`}/>
    
   )
 }
