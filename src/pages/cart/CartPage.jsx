@@ -19,7 +19,7 @@ const CartPage = () => {
       } )}
       <h1 className="totalItems">Total Items:{totalItems}</h1>
      <h1 className="totalPurchase">Total purchase:{totalPurchase.toFixed(2)}€</h1>
-     <NavLink  to="/login"><button disabled={totalItems===0} className='pay_button'>Pay</button></NavLink>
+     <NavLink  to={ (status !== "authenticated")&&`/login` }><button disabled={totalItems===0} className='pay_button'>Pay</button></NavLink>
     </div>
   )
 }
