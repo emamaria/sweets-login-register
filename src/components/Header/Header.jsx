@@ -19,7 +19,7 @@ const Header = () => {
     <header className='header'>
         <h1>Sweets and Drinks</h1>
         {(status !== "authenticated") ? <UserLink/>:<LoggedUserLink name={user.name}/>} 
-        {(path!== "/" && path!== "/cart")&&<CartLink/>}
+        {(path !== "/" && path!== "/cart" && path!== "/login" && path !== "/register" )&&<CartLink/>}
         
         
     </header>
