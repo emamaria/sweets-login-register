@@ -1,11 +1,17 @@
 import {createSlice} from '@reduxjs/toolkit' 
 
+//tomo del storage el array de carritos para mantener  los datos  si hay algo establezco
+//como incitialstate sino le paso un array vacío y tras cada operacion añado al storage la
+//ultima actualizacion del carrito
+let cartItems =  JSON.parse(localStorage.getItem('cart-items')) || []
+
 export const cartSlice = createSlice({
     name: "cartTasks",
-    initialState: [],
+    initialState: cartItems,
     reducers: {
       addCart: (state, action) => {
         state.push(action.payload)
+        localStorage.setItem('cart-items', JSON.stringify(state))
       },
       updateCartAdd: (state, action) => {
         console.log(action.payload)
@@ -13,7 +19,9 @@ export const cartSlice = createSlice({
         if(itemExist){
           itemExist.amount += action.payload.amount
           itemExist.totalPrice += action.payload.totalPrice
+          localStorage.setItem('cart-items', JSON.stringify(state))
         }
+
       }, 
      restFromTotal: (state, action) =>  {
       console.log("state", state)
@@ -25,7 +33,7 @@ export const cartSlice = createSlice({
           console.log("restitem", itemExist)
           itemExist.amount -= 1
           itemExist.totalPrice -= action.payload.price
-
+          localStorage.setItem('cart-items', JSON.stringify(state))
           
           if(itemExist.amount === 0){
            
@@ -33,7 +41,7 @@ export const cartSlice = createSlice({
             const index = state.findIndex(item => item.name === itemExist.name)
             //buscar el indice de ese objeto en el array y pasarlo al splice
               state.splice(index, 1)
-              
+              localStorage.setItem('cart-items', JSON.stringify(state))
 
             
           }
@@ -46,14 +54,23 @@ export const cartSlice = createSlice({
         if(itemExist){
           itemExist.amount += 1
           itemExist.totalPrice += action.payload.price
+          localStorage.setItem('cart-items', JSON.stringify(state))
         }
       },
       deleteProduct: (state, action) =>  {
           console.log("deleteProduct", action)
-          return state.filter( item => item.name !== action.payload.name)
+          // return state.filter( item => item.name !== action.payload.name)
+          //cambiado la lógica de return filter por splice para poder hacer setitem después
+          const index = state.findIndex(item => item.name === action.payload.name)
+          //buscar el índice de ese objeto en el array y pasarlo al splice
+            state.splice(index, 1)
+            localStorage.setItem('cart-items', JSON.stringify(state))
+          
       }
-      
+    
     }
+
+    
 })
    export const  {addCart, updateCartAdd, restFromTotal, addToTotal, deleteProduct} =  cartSlice.actions
 
