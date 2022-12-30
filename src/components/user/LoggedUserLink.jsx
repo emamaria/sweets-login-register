@@ -1,20 +1,26 @@
 import React from 'react'
-import { Navigate, NavLink } from 'react-router-dom'
+import { useNavigate, NavLink } from 'react-router-dom'
 
 const LoggedUserLink = ({name}) => {
+
+  const navigate = useNavigate();
 
   const handleClick = (e) => {
     e.preventDefault()
     localStorage.clear()
     window.location.reload()
-    Navigate("/login") 
+      
+    navigate("/login") 
+    
+    
+    
   }
   return (
     <div className='dropdown-container'>
     <div className='dropdown'>
     <NavLink className="dropbtn" to={`/${name}`}>{`${name[0].toUpperCase()}${name.substring(1)}`} </NavLink>
     <div className="dropdown-content">
-    <NavLink onClick={handleClick} className="dropdown-link">Logout</NavLink>
+    <NavLink onClick={handleClick} className="dropdown-link" to="/login">Logout</NavLink>
     </div>
     </div>
     </div>
