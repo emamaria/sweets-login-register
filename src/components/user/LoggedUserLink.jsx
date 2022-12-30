@@ -3,14 +3,16 @@ import { NavLink } from 'react-router-dom'
 
 const LoggedUserLink = ({name}) => {
   return (
-    <NavLink className="user_link logged_user" to={`/${name}`}>
+    <div className='dropdown-container'>
     <div className='dropdown'>
-    <button className="dropbtn">{`${name[0].toUpperCase()}${name.substring(1)}`}</button>
+    <NavLink className="dropbtn" to={`/${name}`}>{`${name[0].toUpperCase()}${name.substring(1)}`} </NavLink>
     <div className="dropdown-content">
     <NavLink className="dropdown-link" to="/">Logout</NavLink>
     </div>
     </div>
-    </NavLink>
+    </div>
+    
+   
   )
 }
 
