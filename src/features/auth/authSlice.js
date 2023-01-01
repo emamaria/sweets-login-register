@@ -10,7 +10,7 @@ export const authSlice = createSlice({
        checkState: (state) => state,
        login: (state, action) => {
         state.status = 'authenticated';
-        state.user = { id: action.payload.id, name: action.payload.name};
+        state.user = { id: action.payload.id, name: action.payload.name, email: action.payload.email};
           console.log("login payload", action.payload)
           console.log("user state", state.user)
        },
