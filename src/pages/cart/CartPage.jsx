@@ -2,6 +2,7 @@ import React from 'react'
 import {useSelector} from 'react-redux'
 import CartPageItem from '../../components/cart/CartPageItem'
 import { NavLink } from 'react-router-dom'
+import CheckOut from '../../components/CheckOut/CheckOut'
 
 const CartPage = () => {
    const cartState = useSelector(state => state.cartTasks)
@@ -19,7 +20,7 @@ const CartPage = () => {
       } )}
       <h1 className="totalItems">Total Items:{totalItems}</h1>
      <h1 className="totalPurchase">Total purchase:{totalPurchase.toFixed(2)}€</h1>
-     <NavLink  to={ (status !== "authenticated")&&`/login` }><button disabled={totalItems===0} className='pay_button'>Pay</button></NavLink>
+     <NavLink  to={ (status !== "authenticated")&&`/login` }><CheckOut totalItems={totalItems} total={totalPurchase} /></NavLink>
     </div>
   )
 }
