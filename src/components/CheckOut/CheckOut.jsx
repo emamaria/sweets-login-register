@@ -1,8 +1,8 @@
 import axios from "axios";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import StripeCheckout from "react-stripe-checkout";
 import Swal from "sweetalert2";
-import { setCartEmpty } from "../../features/cart/cartSlice";
+
 
 
 
@@ -10,7 +10,6 @@ const CheckOut = ({total, totalItems}) => {
   
     let cartItems = useSelector(state => state.cartTasks)
     let {status,user} = useSelector(state => state.authUser)
-    let dispatch = useDispatch()
     let totalPrice = total.toFixed(2)
     
     function getToken(token) {
@@ -42,8 +41,11 @@ const CheckOut = ({total, totalItems}) => {
 
         console.log(response);
         if (response.data === "Payment done") {
-          Swal.fire("Ok", "Your payment has done successfully", "success");
-          dispatch(setCartEmpty())
+        await Swal.fire("Ok", "Your payment has done successfully", "success");
+
+        localStorage.removeItem('cart-items')
+        window.location.reload()
+         
         }
       } catch (err) {
         console.log(err);
