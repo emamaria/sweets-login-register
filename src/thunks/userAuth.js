@@ -2,6 +2,7 @@
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import {login, logout} from '../features/auth/authSlice'
+import Swal from "sweetalert2";
 //Es una funcion  que me retorna las funciones asíncronas de login, registro como renovar token para
 //poderlo usar donde quiera a lo largo de la aplicacion
 export const UserAuthAsync = () => {
@@ -21,7 +22,19 @@ export const UserAuthAsync = () => {
         dispatch(login({...data}))
         
         } catch (error) {
-              console.log(error.response.data)
+              console.log("error data", error.response.data)
+
+          
+          if(error.response.data.errors?.password){
+            await Swal.fire("Error", error.response.data.errors.password.msg , "incorrect");
+          }
+          
+          
+          if(error.response.data?.msg.includes("email")){
+            await Swal.fire("Error", error.response.data.msg , "incorrect");
+          }
+              
+         
               dispatch(logout())
         }
     }
@@ -38,6 +51,20 @@ export const UserAuthAsync = () => {
         
         } catch (error) {
               console.log(error.response.data)
+
+              if(error.response.data.errors?.password){
+                await Swal.fire("Error", error.response.data.errors.password.msg , "incorrect");
+              }
+              
+              if(error.response.data?.msg.includes("email")){
+                await Swal.fire("Error", error.response.data.msg , "incorrect");
+              }
+
+              
+              if(error.response.data?.msg.includes("password")){
+                await Swal.fire("Error", error.response.data.msg , "incorrect");
+              }
+
               dispatch(logout())
         }
     }
