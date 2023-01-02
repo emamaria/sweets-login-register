@@ -32,10 +32,12 @@ const CheckOut = ({total, totalItems}) => {
         const options = {
             headers: {'user-token': localStorage.getItem('token')}
           };
+
+         console.log("options", options) 
         console.log("2", token, total);
         const response = await axios.post(
           "http://localhost:4000/api/checkout",
-          { token, totalPrice, cartItems, userData, options }
+          { token, totalPrice, cartItems, userData}, options
         );
 
         console.log(response);
