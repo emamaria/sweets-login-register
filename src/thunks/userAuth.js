@@ -28,6 +28,11 @@ export const UserAuthAsync = () => {
           if(error.response.data.errors?.password){
             await Swal.fire("Error", error.response.data.errors.password.msg , "incorrect");
           }
+
+          if(error.response.data.errors?.email?.param === "email"){
+            await Swal.fire("Error", error.response.data.errors.email.msg , "incorrect");
+          }
+          
           
           
           if(error.response.data?.msg.includes("email")){
@@ -60,6 +65,10 @@ export const UserAuthAsync = () => {
                 await Swal.fire("Error", error.response.data.msg , "incorrect");
               }
 
+              if(error.response.data.errors?.email?.param === "email"){
+                await Swal.fire("Error", error.response.data.errors.email.msg , "incorrect");
+              }
+              
               
               if(error.response.data?.msg.includes("password")){
                 await Swal.fire("Error", error.response.data.msg , "incorrect");
