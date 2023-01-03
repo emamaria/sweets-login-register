@@ -5,7 +5,7 @@
     background-color: white ;
     color: $color1;
     padding: 6px;
-    font-size: 15px;
+    font-size: 20px;
     border: none;
     cursor: pointer;
     text-decoration: none;
@@ -27,17 +27,18 @@
     display: none;
     position: absolute;
     background-color: white;
-    min-width: 63px;
+    min-width: 120px;
     // box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     text-align: center;
-    height: 27px;
+    height: 32px;
+    
   }
   
   .dropdown-content a {
     color: $color1;
     padding: 2px 2px;
-    font-size: 15px;
+    font-size: 20px;
     text-decoration: none;
     display: block;
   }
@@ -50,7 +51,39 @@
   
 .dropdown-container{
   position: absolute;
-  right: 20px;
-  top: 0px;
-  
+  right: 160px;
+  top: 10px;
+  z-index: 2;
 }
+
+@media (max-width:600px) {
+ 
+  .dropdown-container{
+  
+    right: 60px;
+    height: 20px;
+    min-width: 100px;
+  }
+
+  .dropdown-content a {
+   
+    font-size: 13px;
+    
+  }
+
+  .dropdown-content {
+   
+    min-width: 90px;
+    
+  }
+ 
+  
+  .dropbtn {
+    
+    font-size: 13px;
+    
+  }
+ 
+
+}
+

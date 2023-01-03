@@ -3,15 +3,32 @@
     display: contents;
     align-items: center;
     img{
-      width: 35px;
+      width: 45px;
     }
 
 }
 
 .user_link{
   position: absolute;
-  right: 25px;
-  top: 15px;
+  right: 150px;
+  top: 23px;
   
+}
+
+@media (max-width:600px) {
+ 
+  .user_icon_container{
+
+    img{
+      width: 35px;
+    }
+
+ }
+
+ .user_link{
+  right: 90px;
+  
+}
+
 }
 
