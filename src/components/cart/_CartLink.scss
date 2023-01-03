@@ -1,14 +1,15 @@
 .cart_link{
     background-color: lightgray;
-
     border-radius: 50%;
-
-    padding: 15px;
-   
+   padding: 10px;
    position: fixed;
    z-index:2;
-   top: 75px;
-   right: 45px;
+   top: 17px;
+   right: 80px;
+   font-size: 15px;
+   img{
+        width: 25px
+   }
 }
 
 .cart_link:hover{
@@ -27,12 +28,10 @@
 @media (max-width:600px) {
  
         .cart_link{
-                font-size: 25px;
+                font-size: 14px;
                 img{
-                   width: 35px
+                   width: 24px
                 }
-              right: 20px;
-              top: 110px;
             }
     
       }

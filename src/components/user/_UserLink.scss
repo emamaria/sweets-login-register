@@ -1,18 +1,17 @@
 .user_icon_container{
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    overflow: hidden;
-    border: 8px solid lightgray;
-  
+ 
+    display: contents;
+    align-items: center;
+    img{
+      width: 35px;
+    }
+
 }
 
 .user_link{
   position: absolute;
-  right: 170px;
+  right: 25px;
+  top: 15px;
   
 }
 
-// .user_icon{
-
-// }

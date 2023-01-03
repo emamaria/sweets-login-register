@@ -11,6 +11,8 @@ const CheckOut = ({total, totalItems}) => {
     let cartItems = useSelector(state => state.cartTasks)
     let {status,user} = useSelector(state => state.authUser)
     let totalPrice = total.toFixed(2)
+   
+    
     
     function getToken(token) {
     console.log("1", token, totalPrice, cartItems);
@@ -49,6 +51,11 @@ const CheckOut = ({total, totalItems}) => {
         }, 1500)
         
          
+        }
+
+        if(response.data  === "payment failed"){
+          await Swal.fire("Error", "Payment failed, try again the payment process", "Incorrect");
+          
         }
 
         if(response.data.ok === false){
