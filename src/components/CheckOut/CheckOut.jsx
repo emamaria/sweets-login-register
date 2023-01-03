@@ -41,7 +41,7 @@ const CheckOut = ({total, totalItems}) => {
 
         console.log(response);
         if (response.data === "Payment done") {
-        await Swal.fire("Ok", "Your payment has done successfully", "success");
+        await Swal.fire("Ok", "Your payment has done successfully", "Success");
           
         setTimeout(()=>{
           localStorage.removeItem('cart-items')
@@ -50,6 +50,12 @@ const CheckOut = ({total, totalItems}) => {
         
          
         }
+
+        if(response.data.ok === false){
+          await Swal.fire("Error", "Something went wrong, try again the payment process", "Incorrect");
+          
+        }
+
       } catch (err) {
         console.log(err);
       }
