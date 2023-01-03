@@ -4,6 +4,8 @@ import { Navigate, NavLink } from 'react-router-dom';
 import { UserAuthAsync } from '../../thunks/userAuth';
 
 const RegisterForm = () => {
+  const [color,setColor]=useState('#65C18C');
+  const [textColor,setTextColor]=useState('white');
 
 
   const {userRegister} = UserAuthAsync()
@@ -39,7 +41,7 @@ const RegisterForm = () => {
    <input className='form_input' type="text" placeholder="name" name="name" value={name} onChange={handleChange} required/> 
    <input className='form_input' type="email" placeholder="email" name="email" value={email}  onChange={handleChange} required/> 
    <input className='form_input' type="password" placeholder="password" name="password" value={password}  onChange={handleChange} required/>
-   <button className='form_button' type="submit"><p>Register</p></button>
+   <button className='form_button' type="submit" onMouseDown={()=>{ setColor("white");setTextColor('black'); }}  onMouseUp={()=>{ setColor("#65C18C");setTextColor('white'); }} style={{background:color,color:textColor}} ><p>Register</p></button>
    <NavLink className="form_navlink" to="/login"><p className="registerLink">Back to login</p></NavLink>
   </form>
   </div>):<Navigate to={`/${user.name}`}/>
