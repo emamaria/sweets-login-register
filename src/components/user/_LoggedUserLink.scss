@@ -3,20 +3,21 @@
 
    .dropbtn {
     background-color: white ;
-    color: $color1;
+    color: #10A19D;
     padding: 6px;
     font-size: 20px;
     border: none;
     cursor: pointer;
     text-decoration: none;
-   
+    
+    font-weight: bold;
    
   }
   
   .dropdown {
     position: relative;
     display: inline-block;
-   
+    
   }
 
   .dropdown a:hover{
@@ -32,15 +33,16 @@
     z-index: 1;
     text-align: center;
     height: 32px;
-    
+    background-color: lightgreen;
   }
   
   .dropdown-content a {
-    color: $color1;
+    color: #10A19D;
     padding: 2px 2px;
     font-size: 20px;
     text-decoration: none;
     display: block;
+    font-weight: bold;
   }
   
   .dropdown-content .dropdown-link:hover {color: #2772db}

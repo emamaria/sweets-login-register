@@ -18,7 +18,7 @@ const LoggedUserLink = ({name}) => {
   return (
     <div className='dropdown-container'>
     <div className='dropdown'>
-    <NavLink className="dropbtn" to={`/${name}`}>{`${name[0].toUpperCase()}${name.substring(1)}`} </NavLink>
+    <NavLink className="dropbtn" to={`/${name}`}>{`${name[0].toUpperCase()}${name.substring(1)}`} orders</NavLink>
     <div className="dropdown-content">
     <NavLink onClick={handleClick} className="dropdown-link" to="/login">Logout</NavLink>
     </div>
