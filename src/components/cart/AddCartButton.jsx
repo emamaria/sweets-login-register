@@ -24,11 +24,11 @@ const AddCartButton = ({name, amount, totalPrice, price, category}) => {
    console.log("itemname", itemExist)
     if(itemExist?.name === name){
       dispatch(updateCartAdd({name, amount, totalPrice, price}))
+  
     }else{
      
       // console.log(name, amount, totalPrice, price)
-      dispatch(addCart({name, amount, totalPrice, price, category}))
-     
+       dispatch(addCart({name, amount, totalPrice, price, category})) 
     }
      
   
