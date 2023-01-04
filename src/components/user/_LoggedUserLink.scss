@@ -9,9 +9,9 @@
     border: none;
     cursor: pointer;
     text-decoration: none;
-    
+    font-family: $font1;
     font-weight: bold;
-   
+    border-radius: 6px;
   }
   
   .dropdown {
@@ -32,8 +32,8 @@
     // box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     text-align: center;
-    height: 32px;
     background-color: lightgreen;
+    border-radius: 6px;
   }
   
   .dropdown-content a {
@@ -43,6 +43,8 @@
     text-decoration: none;
     display: block;
     font-weight: bold;
+    font-family: $font1;
+
   }
   
   .dropdown-content .dropdown-link:hover {color: #2772db}
@@ -54,15 +56,15 @@
 .dropdown-container{
   position: absolute;
   right: 160px;
-  top: 10px;
-  z-index: 2;
+  top: 7px;
+ 
 }
 
 @media (max-width:600px) {
  
   .dropdown-container{
   
-    right: 60px;
+    right: 110px;
     height: 20px;
     min-width: 100px;
   }
