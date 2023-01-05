@@ -1,8 +1,21 @@
-import React, { useState } from 'react'
-import { sweetData } from '../../data/sweets'
+import React, { useEffect, useState } from 'react'
 import Sweet from '../../components/sweets/sweet'
+import axios from 'axios'
 
 const Sweets = () => {
+
+  const [data, setData] = useState([]);
+
+  let url = `${process.env.REACT_APP_API}/sweet`
+
+   useEffect(() => {
+      axios.get(url).then((res) => {
+        console.log(res.data)
+        setData(res.data)
+      })
+  }, [url]);
+
+  console.log("midata", data)
 
 const [inputValue, setInputValue] = useState("");
 
@@ -13,17 +26,12 @@ const [inputValue, setInputValue] = useState("");
 
 }
 
-
-
- 
-
-
-  return (
+return (
     <div className='sweets_screen'>
     <input type="text" placeholder="write the sweet name" value={inputValue} onChange={handleChange}/>
     <div className='sweets__container'>
-      {  sweetData.filter(data => data.name.toLowerCase().includes(inputValue.toLowerCase())).map( (data, index) => {
-          return <Sweet key={index}  name={data.name} price={data.price} quantity={data.size}  category={data.category}/>
+      {  data.filter(data => data.name.toLowerCase().includes(inputValue.toLowerCase())).map( (data) => {
+          return <Sweet key={data._id} img={data.img} description={data.description} name={data.name} price={data.price} quantity={data.size}  category={data.category}/>
         })
       }
       

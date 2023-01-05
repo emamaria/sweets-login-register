@@ -15,7 +15,7 @@ const CartPage = () => {
     <div className='cartPage_container'>
      <h1 className='cartPage_container_title'>{(status !== "authenticated")?"User": `${user.name[0].toUpperCase()}${user.name.substring(1)}`} Shopping Cart Info</h1>
       { cartState.map((item, index) => {
-        return <CartPageItem key={index} name={item.name} totalPrice={item.totalPrice} amount={item.amount} 
+        return <CartPageItem key={index} img={item.img} name={item.name} totalPrice={item.totalPrice} amount={item.amount} 
         price={item.price} category={item.category}/>
       } )}
       <h1 className="totalItems">Total Items:{totalItems}</h1>

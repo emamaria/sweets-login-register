@@ -3,7 +3,7 @@ import {useDispatch} from 'react-redux'
 import {addCart, updateCartAdd} from '../../features/cart/cartSlice.js'
 import {useSelector} from 'react-redux'
 
-const AddCartButton = ({name, amount, totalPrice, price, category}) => {
+const AddCartButton = ({name, amount, totalPrice, price, category, img}) => {
 
   const [color,setColor]=useState('#65C18C');
   const [textColor,setTextColor]=useState('white');
@@ -28,7 +28,7 @@ const AddCartButton = ({name, amount, totalPrice, price, category}) => {
     }else{
      
       // console.log(name, amount, totalPrice, price)
-       dispatch(addCart({name, amount, totalPrice, price, category})) 
+       dispatch(addCart({name, amount, totalPrice, price, category, img})) 
     }
      
   

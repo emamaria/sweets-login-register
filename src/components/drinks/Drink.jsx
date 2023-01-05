@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
 import AddCartButton from '../cart/AddCartButton';
-// import {useSelector} from 'react-redux'
 
-const Drink = ({name, quantity, price, category}) => {
-  // const cartState = useSelector(state => state.cartTasks)
 
-  // console.log(cartState)
+const Drink = ({name,description, img, price, category}) => {
+
   let unitPrice = price
+
   const [count, setCount] = useState({price: unitPrice, amount: 1, totalPrice(){ return (this.price*this.amount)}, name , category});
   
     const restAmount = () => {
@@ -22,7 +21,7 @@ const Drink = ({name, quantity, price, category}) => {
     }
   return (
     <div className='drink_container'>
-        <img src={`/assets/drinks/${name.split(" ").join("_")}.jpg`} alt={name}/>
+        <img src={img} alt={name}/>
         <h3>{name[0].toUpperCase() + name.substring(1)}</h3>
         <div className="sweet_total_container">
         <p className='sweet_price'>{count.totalPrice().toFixed(2)}€</p>
@@ -32,7 +31,7 @@ const Drink = ({name, quantity, price, category}) => {
          <button onClick={addAmount}>+</button>
         
         </div>
-        <AddCartButton name={count.name} price={count.price} amount={count.amount} totalPrice={count.totalPrice() } category={count.category}/>
+        <AddCartButton name={count.name} img={img} price={count.price} amount={count.amount} totalPrice={count.totalPrice() } category={count.category}/>
         </div>
        
     </div>

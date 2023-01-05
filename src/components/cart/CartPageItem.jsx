@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import {useDispatch} from 'react-redux'
 import { restFromTotal, addToTotal, deleteProduct} from '../../features/cart/cartSlice'
 
-const CartPageItem = ({price, totalPrice, name, amount, category}) => {
+const CartPageItem = ({price, totalPrice, name, amount, category, img}) => {
 
   const [color,setColor]=useState('#65C18C');
   const [textColor,setTextColor]=useState('black');
@@ -24,7 +24,7 @@ const CartPageItem = ({price, totalPrice, name, amount, category}) => {
   return (
     <div className="cartItem_container">
        <div className='img_container'>
-       {name && <img src={`/assets/${category}/${name.split(" ").join("_")}.jpg`} alt={name}/>}
+       {name && <img src={img} alt={name}/>}
        </div>
         <div className="cartDetail_container">
             <h1>{name[0].toUpperCase() + name.substring(1)}</h1>

@@ -37,13 +37,14 @@ const CheckOut = ({total, totalItems}) => {
          console.log("options", options) 
         console.log("2", token, total);
         const response = await axios.post(
-          "http://localhost:4000/api/checkout",
+          
+          `${process.env.REACT_APP_API}/checkout` ,
           { token, totalPrice, cartItems, userData}, options
         );
 
         console.log(response);
         if (response.data === "Payment done") {
-        await Swal.fire("Ok", "Your payment has done successfully", "Success");
+        await Swal.fire("Ok", "Your payment was successful", "Success");
           
         setTimeout(()=>{
           localStorage.removeItem('cart-items')

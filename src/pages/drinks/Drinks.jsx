@@ -1,14 +1,27 @@
-import React from 'react'
-import { drinkData } from '../../data/drinks'
+import React, { useEffect, useState } from 'react'
 import Drink from '../../components/drinks/Drink'
+import axios from 'axios';
 
 const Drinks = () => {
+
+  const [data, setData] = useState([]);
+
+  let url = `${process.env.REACT_APP_API}/drink`
+
+   useEffect(() => {
+      axios.get(url).then((res) => {
+        console.log(res.data)
+        setData(res.data)
+      })
+  }, [url]);
+
+  console.log("midata", data)
  
   return (
     <div className='drinks_screen'>
     <div className='sweets__container'>
-      {  drinkData.map( (data, index) => {
-          return <Drink key={index}  name={data.name} price={data.price} quantity={data.size} category={data.category}/>
+      {  data.map( (data) => {
+          return <Drink key={data._id}  description={data.description} img={data.img}  name={data.name} price={data.price} category={data.category}/>
         })
       }
       
