@@ -75,7 +75,7 @@ const CheckOut = ({total, totalItems}) => {
   return (
     <div>
       <StripeCheckout
-        amount={totalPrice*100}
+        amount={Math.round(totalPrice*100)}
         shippingAddress
         token={getToken}
         stripeKey={
