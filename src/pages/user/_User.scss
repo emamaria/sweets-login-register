@@ -1,6 +1,12 @@
 table, th, td {
-    border:1px solid black;
+    border:2px solid  white;
 
+  }
+
+
+  .orderpage_tite{
+    font-family: $font1;
+    color: white;
   }
 
 table{
@@ -9,9 +15,22 @@ table{
 }
 
 th, td{
-    width: 250px;
+    width: 100px;
+   
+}
+
+td{
+    padding: 5px;
   
 }
+
+th{
+  background-color: white;  
+}
+
+// td{
+//     background-color: white;
+// }
 
 .orders_items_container{
     margin-bottom: 10px;

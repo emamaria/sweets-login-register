@@ -29,14 +29,14 @@ const User = () => {
   return (
     <div>
      <div className='orders_container'>
-        <h1>{`${name[0].toUpperCase()}${name.substring(1)}` } Orders</h1>
+        <h1 className='orderpage_tite'>{`${name[0].toUpperCase()}${name.substring(1)}` } Orders</h1>
           {userOrders.map( (order) => {
             return (<table key={order._id}>
               <thead>
               <tr>
               <th>Ordered Products</th>
                <th>Shipping Address</th>
-               <th>Ordered date</th>
+               <th>Ordered Date</th>
               </tr>
               </thead>
              <tbody>
@@ -64,7 +64,7 @@ const User = () => {
               </td>
                 <td>
               <p className="orderDate">
-              {`date:  ${order.createdAt.slice(0,10)}`}
+              {`Date:  ${order.createdAt.slice(0,10)}`}
               </p>
               <p className="orderDate">
                Delivered:{order.orderDelivered && "ok"}
