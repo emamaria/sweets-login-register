@@ -28,17 +28,20 @@ const User = () => {
 
   return (
     <div>
-     <div>
-        <h1>{`${name[0].toUpperCase()}${name.substring(1)}` } orders</h1>
+     <div className='orders_container'>
+        <h1>{`${name[0].toUpperCase()}${name.substring(1)}` } Orders</h1>
           {userOrders.map( (order) => {
             return (<table key={order._id}>
+              <thead>
               <tr>
-               <th>Ordered Products</th>
+              <th>Ordered Products</th>
                <th>Shipping Address</th>
                <th>Ordered date</th>
-             </tr>
+              </tr>
+              </thead>
+             <tbody>
              <tr>
-              <td>{order.orderItems.map((item, index) => {
+             <td>{order.orderItems.map((item, index) => {
                 return (<div className='orders_items_container' key={index}>
                   <p>{`${item.name[0].toUpperCase()}${item.name.substring(1)}`}</p>
                   <p>{`${item.amount} x ${item.price.toFixed(2)}€ = ${item.totalPrice.toFixed(2)}€`}</p>
@@ -59,15 +62,16 @@ const User = () => {
               {`Postcode ${order.shippingAddress.postcode}`}
               </p>
               </td>
-              <td>
+                <td>
               <p className="orderDate">
-              {`date:  ${order.createdAt}`}
+              {`date:  ${order.createdAt.slice(0,10)}`}
               </p>
               <p className="orderDate">
                Delivered:{order.orderDelivered && "ok"}
               </p>
               </td>
-             </tr>
+              </tr>
+             </tbody>
             </table>)
           })}
      </div>
