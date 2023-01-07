@@ -1,6 +1,7 @@
 table, th, td {
     border:2px solid  white;
-
+    font-size: 17px;
+    
   }
 
 
@@ -19,10 +20,7 @@ th, td{
    
 }
 
-td{
-    padding: 5px;
-  
-}
+
 
 th{
   background-color: white;  
@@ -55,3 +53,12 @@ th{
     
    
 }
+
+@media (max-width:600px) {
+ 
+    table{
+        font-size: 10px;
+       
+       }
+
+  }

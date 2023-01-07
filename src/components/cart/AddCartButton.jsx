@@ -37,7 +37,7 @@ const AddCartButton = ({name, amount, totalPrice, price, category, img}) => {
  
   return (
     
-    <button onClick={AddItemToCart} onMouseDown={()=>{ setColor("white");setTextColor('black'); }} onMouseUp={()=>{ setColor("#65C18C");setTextColor('white'); }}style={{background:color,color:textColor}}  className='addCartButton'> Add to cart
+    <button onClick={AddItemToCart} onMouseDown={()=>{ setColor("white");setTextColor('black'); }} onMouseUp={()=>{ setColor("#65C18C");setTextColor('white'); }}style={{background:color,color:textColor}}  className='addCartButton addCart_counter_button'> Add to cart
     </button>
   
   )

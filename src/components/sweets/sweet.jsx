@@ -29,11 +29,11 @@ const [count, setCount] = useState({price: unitPrice, amount: 1, totalPrice(){ r
         <div className="sweet_total_container">
         <p className='sweet_price'>{count.totalPrice().toFixed(2)}€</p>
         <div className="sweet_amount" >
-        <button onClick={restAmount}>-</button>
+        <button className="addCart_counter_button" onClick={restAmount}>-</button>
         <p>{count.amount}</p>
-         <button onClick={addAmount}>+</button>
+         <button className="addCart_counter_button" onClick={addAmount}>+</button>
          </div>
-        <AddCartButton name={count.name} img={img} price={count.price} amount={count.amount} totalPrice={count.totalPrice()} category={count.category}/>
+        <AddCartButton  name={count.name} img={img} price={count.price} amount={count.amount} totalPrice={count.totalPrice()} category={count.category}/>
         </div>
         
     </div>

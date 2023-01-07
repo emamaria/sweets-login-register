@@ -29,7 +29,7 @@ const User = () => {
   return (
     <div>
      <div className='orders_container'>
-        <h1 className='orderpage_tite'>{`${name[0].toUpperCase()}${name.substring(1)}` } Orders</h1>
+        <h1 className='orderpage_tite'>{`${name[0].toUpperCase()}${name.substring(1)}´s` } Orders</h1>
           {userOrders.map( (order) => {
             return (<table key={order._id}>
               <thead>
@@ -47,7 +47,7 @@ const User = () => {
                   <p>{`${item.amount} x ${item.price.toFixed(2)}€ = ${item.totalPrice.toFixed(2)}€`}</p>
                   </div>)
                   
-              })} <p>{`Total:${order.orderPrice}€`}</p></td>
+              })} <p>{`Total:${order.orderPrice.toFixed(2)}€`}</p></td>
               <td>
               <p className="shippingdata">
               {`Street ${order.shippingAddress.street}`}
@@ -59,7 +59,7 @@ const User = () => {
               {`Country ${order.shippingAddress.country}`}
               </p>
               <p className="shippingdata">
-              {`Postcode ${order.shippingAddress.postcode}`}
+              {`Post Code ${order.shippingAddress.postcode}`}
               </p>
               </td>
                 <td>

@@ -32,11 +32,11 @@ const CartPageItem = ({price, totalPrice, name, amount, category, img}) => {
             <h1>Total: {totalPrice?.toFixed(2)}€</h1>
             <div  className='buttons_container'>
             <div className="counter_container">
-            <button onClick={restAmountTotal}>-</button>
+            <button className="addCart_counter_button" onClick={restAmountTotal}>-</button>
             <p>{amount}</p>
-            <button onClick={addAmountTotal}>+</button>
+            <button className="addCart_counter_button" onClick={addAmountTotal}>+</button>
             </div>
-            <button className='deleteButton' onClick={deleteFromCart} onMouseDown={()=>{ setColor("white");setTextColor('white'); }} onMouseUp={()=>{ setColor("#65C18C");setTextColor('black'); }}style={{background:color,color:textColor}}  >Delete</button>
+            <button className='deleteButton addCart_counter_button' onClick={deleteFromCart} onMouseDown={()=>{ setColor("white");setTextColor('white'); }} onMouseUp={()=>{ setColor("#65C18C");setTextColor('black'); }}style={{background:color,color:textColor}}  >Delete</button>
             </div>
            
         </div>
