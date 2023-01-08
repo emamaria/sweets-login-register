@@ -9,7 +9,7 @@ import Sweets from '../pages/sweets/Sweets'
 import LoginForm from '../pages/forms/LoginForm'
 import RegisterForm from '../pages/forms/RegisterForm'
 import { UserAuthAsync } from '../thunks/userAuth'
-import { useSelector } from 'react-redux'
+// import { useSelector } from 'react-redux'
 import User from '../pages/user/User'
 import { PrivateRoute } from './PrivateRoute'
 //la ruta que quiero proteger es el :user entonces envuelvo el componente User con el componente PrivateRoute siendo
@@ -17,9 +17,9 @@ import { PrivateRoute } from './PrivateRoute'
 const AppRouter = () => {
  const {checkUserToken} = UserAuthAsync()
 
- const {status} = useSelector(state => state.authUser)
+//  const {status} = useSelector(state => state.authUser)
 
- console.log(status)
+ 
  
   //se ha colocado aquí para que  al recargar cualquier pagina de mi app se ejecute para validar y renovar el token
   //para mantener o no la sesion del usuario según si está logeado(autenticado) o no. se coloca array porque solo quiero que se

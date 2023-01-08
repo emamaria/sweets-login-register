@@ -16,13 +16,13 @@ export const UserAuthAsync = () => {
       try {
 
         const {data} = await axios.post(`${baseUrl}/auth/register`, {name,email, password})
-        console.log(data)
+        // console.log(data)
         localStorage.setItem('token', data.token);
         localStorage.setItem('token-init-date', new Date().getTime());
         dispatch(login({...data}))
         
         } catch (error) {
-              console.log("error data", error.response.data)
+              // console.log("error data", error.response.data)
 
           
           if(error.response.data.errors?.password){
@@ -49,13 +49,13 @@ export const UserAuthAsync = () => {
       try {
 
         const {data} = await axios.post(`${baseUrl}/auth/login`, {email, password})
-        console.log(data)
+        // console.log(data)
         localStorage.setItem('token', data.token);
         localStorage.setItem('token-init-date', new Date().getTime());
         dispatch(login({...data}))
         
         } catch (error) {
-              console.log(error.response.data)
+              // console.log(error.response.data)
 
               if(error.response.data.errors?.password){
                 await Swal.fire("Error", error.response.data.errors.password.msg , "incorrect");
@@ -88,13 +88,13 @@ export const UserAuthAsync = () => {
       try {
 
         const {data} = await axios.get(`${baseUrl}/auth/token`, options)
-        console.log(data)
+        // console.log(data)
         localStorage.setItem('token', data.token);
         localStorage.setItem('token-init-date', new Date().getTime());
         dispatch(login({...data}))
         
         } catch (error) {
-              console.log(error.response.data)
+              // console.log(error.response.data)
               localStorage.clear()
               dispatch(logout())
         }
