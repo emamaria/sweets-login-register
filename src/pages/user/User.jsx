@@ -50,16 +50,16 @@ const User = () => {
               })} <p>{`Total:${order.orderPrice.toFixed(2)}€`}</p></td>
               <td>
               <p className="shippingdata">
-              {`Street ${order.shippingAddress.street}`}
+              {`Street: ${order.shippingAddress.street}`}
               </p>
               <p className="shippingdata">
-              {`City ${order.shippingAddress.city}`}
+              {`City: ${order.shippingAddress.city}`}
               </p>
               <p className="shippingdata">
-              {`Country ${order.shippingAddress.country}`}
+              {`Country: ${order.shippingAddress.country}`}
               </p>
               <p className="shippingdata">
-              {`Post Code ${order.shippingAddress.postcode}`}
+              {`Post Code: ${order.shippingAddress.postcode}`}
               </p>
               </td>
                 <td>
@@ -67,7 +67,7 @@ const User = () => {
               {`Date:  ${order.createdAt.slice(0,10)}`}
               </p>
               <p className="orderDate">
-               Delivered:{order.orderDelivered && "ok"}
+               Order Status: {order.orderStatus}
               </p>
               </td>
               </tr>

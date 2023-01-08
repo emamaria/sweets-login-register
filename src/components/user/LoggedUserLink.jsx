@@ -12,9 +12,13 @@ const LoggedUserLink = ({name}) => {
       
     navigate("/login") 
     
-    
-    
+
   }
+
+  //por si hay nombres compuestos largos, solo tomar el primer nombre
+  let nameArr = name.split(" ")
+
+  name = nameArr[0]
   return (
     <div className='dropdown-container'>
     <div className='dropdown'>
