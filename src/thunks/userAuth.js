@@ -26,17 +26,17 @@ export const UserAuthAsync = () => {
 
           
           if(error.response.data.errors?.password){
-            await Swal.fire("Error", error.response.data.errors.password.msg , "incorrect");
+            await Swal.fire("Invalid password", error.response.data.errors.password.msg , "incorrect");
           }
 
           if(error.response.data.errors?.email?.param === "email"){
-            await Swal.fire("Error", error.response.data.errors.email.msg , "incorrect");
+            await Swal.fire("Invalid email", error.response.data.errors.email.msg , "incorrect");
           }
           
           
           
-          if(error.response.data?.msg.includes("email")){
-            await Swal.fire("Error", error.response.data.msg , "incorrect");
+          if(error.response.data?.msg?.includes("email")){
+            await Swal.fire("Invalid email", error.response.data.msg , "incorrect");
           }
               
          
@@ -57,21 +57,21 @@ export const UserAuthAsync = () => {
         } catch (error) {
               // console.log(error.response.data)
 
-              if(error.response.data.errors?.password){
-                await Swal.fire("Error", error.response.data.errors.password.msg , "incorrect");
+              if(error.response.data?.errors?.password){
+                await Swal.fire("Invalid password", error.response.data.errors.password.msg , "incorrect");
               }
               
-              if(error.response.data?.msg.includes("email")){
-                await Swal.fire("Error", error.response.data.msg , "incorrect");
+              if(error.response.data?.msg?.includes("email")){
+                await Swal.fire("Invalid email", error.response.data.msg , "incorrect");
               }
 
-              if(error.response.data.errors?.email?.param === "email"){
-                await Swal.fire("Error", error.response.data.errors.email.msg , "incorrect");
+              if(error.response.data?.errors?.email?.param === "email"){
+                await Swal.fire("Invalid email", error.response.data.errors.email.msg , "incorrect");
               }
               
               
-              if(error.response.data?.msg.includes("password")){
-                await Swal.fire("Error", error.response.data.msg , "incorrect");
+              if(error.response.data?.msg?.includes("password")){
+                await Swal.fire("Invalid password", error.response.data.msg , "incorrect");
               }
 
               dispatch(logout())
