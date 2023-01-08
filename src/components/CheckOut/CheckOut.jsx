@@ -77,7 +77,7 @@ const CheckOut = ({total, totalItems}) => {
       <StripeCheckout
         amount={Math.round(totalPrice*100)}
         shippingAddress
-        billingAddress={false}
+        billingAddress
         token={getToken}
         stripeKey={
           "pk_test_51KubPTDR9kHMYlDcVQVuEQhOSH2dE8pW7ynTtxR8IcEEbmaV0P1DbvJ0vdmpi9paBKjSnLHX1VhRyxpPLJKMUbRU00g1kOAOaV"
