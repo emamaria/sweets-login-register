@@ -107,8 +107,12 @@
     }
 
     .buttons_container{
-       width: 150px;
+      flex-wrap: wrap;
         
+    }
+
+    .addCart_counter_button{
+        margin-bottom: 5px;
     }
     
   }
