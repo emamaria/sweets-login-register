@@ -27,9 +27,9 @@ const CartPageItem = ({price, totalPrice, name, amount, category, img}) => {
        {name && <img src={img} alt={name}/>}
        </div>
         <div className="cartDetail_container">
-            <h1>{name[0].toUpperCase() + name.substring(1)}</h1>
-            <h1>Price: {price.toFixed(2)}€</h1>
-            <h1>Total: {totalPrice?.toFixed(2)}€</h1>
+            <h1 class="data">{name[0].toUpperCase() + name.substring(1)}</h1>
+            <h1 class="data">Price: {price.toFixed(2)}€</h1>
+            <h1 class="data">Total: {totalPrice?.toFixed(2)}€</h1>
             <div  className='buttons_container'>
             <div className="counter_container">
             <button className="addCart_counter_button" onClick={restAmountTotal}>-</button>
