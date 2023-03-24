@@ -71,29 +71,37 @@
     .cartDetail_container{
 
         h1{
-            font-size: 20px;
+            font-size: 18px;
         }
        
     }
 
 
     .totalPurchase{
-        font-size:20px;
+        font-size:18px;
     }
     
     .totalItems{
-        font-size:20px ;
+        font-size:18px ;
     }
     
     .counter_container{
 
         button{
-            width: 20px
+            width: 18px
         }
 
         p{
-            font-size: 20px;
+            font-size: 18px;
         }
+        
+    }
+
+    .deleteButton{
+        width: 60px;
+        height: 30px;
+       
+        font-size: 18px;
         
     }
     

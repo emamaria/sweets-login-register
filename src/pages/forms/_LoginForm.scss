@@ -48,3 +48,27 @@
 .form_navlink{
     text-decoration: none;
 }
+
+@media (max-width:800px){
+
+    .form{
+        
+        width: 270px;
+       
+    }
+    
+  
+    .form_input{
+        width: 250px;
+        height: 20px;
+        
+    }
+    
+    .form_button{
+        
+        width: 250px;
+        
+    }
+    
+
+}

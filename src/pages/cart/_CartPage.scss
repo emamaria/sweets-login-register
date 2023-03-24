@@ -33,19 +33,27 @@
     
 }
 
-@media (max-width:600px) {
+@media (max-width:800px) {
  
     .cartPage_container{
         margin: 30px;
         background-color: white;
-       
+        
         align-items: center;
        
     
     }
 
     .cartPage_container_title{
-        font-size: 25px;
+        font-size: 18px;
+    }
+
+    .cartPage_container h1{
+        font-size: 18px;
+    }
+
+    .pay_button{
+        font-size: 15px;
     }
 
   }
