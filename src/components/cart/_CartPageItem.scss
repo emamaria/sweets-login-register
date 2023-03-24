@@ -2,7 +2,7 @@
 .cartItem_container{
     display: flex;
     flex-direction: row;
-    padding: 20px;
+    padding: 30px;
    
     flex-wrap: wrap;
     
@@ -71,7 +71,8 @@
     .cartDetail_container{
 
         h1{
-            font-size: 18px;
+            font-size: 15px;
+            font-weight: normal;
         }
        
     }
@@ -102,6 +103,11 @@
         height: 30px;
        
         font-size: 18px;
+        
+    }
+
+    .buttons_container{
+        justify-content: flex-start;
         
     }
     
