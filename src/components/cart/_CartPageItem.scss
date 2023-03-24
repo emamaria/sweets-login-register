@@ -68,12 +68,12 @@
         margin-right: 0px;
     }
 
-    .cartDetail_container{
+    .cartDetail_container h1{
 
-        h1{
+        
             font-size: 10px;
             font-weight: normal;
-        }
+    
        
     }
 
@@ -101,7 +101,7 @@
     .deleteButton{
         width: 60px;
         height: 30px;
-       
+        margin-top: 5px;
         font-size: 18px;
         
     }
@@ -111,8 +111,6 @@
         
     }
 
-    .addCart_counter_button{
-        margin-bottom: 5px;
-    }
+   
     
   }
