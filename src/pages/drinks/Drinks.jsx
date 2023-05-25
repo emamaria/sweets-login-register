@@ -19,7 +19,7 @@ const Drinks = () => {
  
   return (
     <div className='drinks_screen'>
-     {data.length === 0 && <p class="loading">Loading...</p>}
+     {data.length === 0 && <p class="loading">Loading<i class="fa-sharp fa-solid fa-spinner fa-spin-pulse"></i></p>}
     <div className='sweets__container'>
       {  data.map( (data) => {
           return <Drink key={data._id}  description={data.description} img={data.img}  name={data.name} price={data.price} category={data.category}/>
