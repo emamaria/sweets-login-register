@@ -35,12 +35,22 @@
   
  }
 
+ .loading{
+  color: #10A19D;
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: $font1;
+ }
 
  @media (max-width:800px) {
  
   .sweets_screen input{
     width: 270px;
     font-size: 15px;
+  }
+
+  .loading{
+    font-size: 1.2rem;
   }
 
 }

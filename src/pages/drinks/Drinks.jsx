@@ -19,6 +19,7 @@ const Drinks = () => {
  
   return (
     <div className='drinks_screen'>
+     {!data && <p class="loading">Loading...</p>}
     <div className='sweets__container'>
       {  data.map( (data) => {
           return <Drink key={data._id}  description={data.description} img={data.img}  name={data.name} price={data.price} category={data.category}/>
@@ -26,6 +27,7 @@ const Drinks = () => {
       }
       
      </div>
+    
     </div>
   )
 }
